@@ -4,7 +4,8 @@
   "description": "",
   "private": true,
   "dependencies": {
-    "egg": "^1.4.0"
+    "egg": "^1.4.0",
+    "egg-cors": "^1.1.0"
   },
   "devDependencies": {
     "autod": "^2.8.0",

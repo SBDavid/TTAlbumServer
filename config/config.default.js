@@ -8,5 +8,13 @@ module.exports = appInfo => {
 
   // add your config here
 
+  // 跨域设置
+  config.security = {
+    domainWhiteList: ['http://localhost:3000']
+  }
+  config.cors = {
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+  }
+
   return config;
 };

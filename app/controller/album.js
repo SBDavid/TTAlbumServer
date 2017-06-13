@@ -62,7 +62,8 @@ module.exports = app => {
         else {
             this.ctx.status = 404;
             this.ctx.body = {
-                error: "id not found",
+                errorcode: 601,
+                message: "没有找到album!",
             };
         }
     }

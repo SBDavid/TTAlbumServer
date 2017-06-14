@@ -10,7 +10,7 @@ module.exports = appInfo => {
 
   // 跨域设置
   config.security = {
-    domainWhiteList: ['http://localhost:3000','http://ec2-52-15-52-128.us-east-2.compute.amazonaws.com']
+    domainWhiteList: ['http://localhost:3000','http://ec2-52-15-52-128.us-east-2.compute.amazonaws.com','http://blog.tangjiawei.cr.cx']
   }
   config.cors = {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',

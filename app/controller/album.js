@@ -1,6 +1,6 @@
 'use strict';
 
-var res = 
+var res2 = 
     {
         document: {
             title: '透透的相册',
@@ -50,6 +50,23 @@ var res1 =
         ]
     };
 
+var resErr = 
+    {
+        document: {
+            title: 'Api访问错误',
+        },
+        components: 
+        [
+            {
+                template: 'Error',
+                id: 1,
+                data: {
+                    title: '没有找到相关的Album页面',
+                }
+            }
+        ]
+    };
+
 module.exports = app => {
   class AlbumController extends app.Controller {
     * album() {
@@ -57,14 +74,12 @@ module.exports = app => {
             this.ctx.body = res1;
         }
         else if (this.ctx.params.id == 2) {
-            this.ctx.body = res;
+            this.ctx.body = res2;
         }
         else {
-            this.ctx.status = 404;
-            this.ctx.body = {
-                errorcode: 601,
-                message: "没有找到album!",
-            };
+            resErr.components[0].data.message = `id: ${this.ctx.params.id}`
+            resErr.components[0].data.detail = JSON.stringify(this.ctx.request);
+            this.ctx.body = resErr;
         }
     }
   }

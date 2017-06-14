@@ -70,7 +70,7 @@ var resErr =
 module.exports = app => {
   class AlbumController extends app.Controller {
     * album() {
-        if (this.ctx.params.id == 1) {
+        if (this.ctx.params.id == 1 || this.ctx.params.id === 'undefined') {
             this.ctx.body = res1;
         }
         else if (this.ctx.params.id == 2) {

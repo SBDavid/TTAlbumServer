@@ -7,6 +7,7 @@ var urlPage_Table = {
 },
 
 var page_Model = {
+    id:'id',
     head: {
         title: "title",
         meta: [],

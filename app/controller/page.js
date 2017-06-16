@@ -24,8 +24,18 @@ module.exports = app => {
                 this.ctx.response.status = 404;
                 return;
             }
-            var pages = yield this.ctx.model.Pages.find()
-            this.ctx.body = urlmaps;
+            var pages = yield this.ctx.model.Pages.find({id: pageId});
+            // 判断页面pages时候有效
+            if (pages.length === 0) {
+                this.ctx.response.status = 404;
+                return;
+            }
+
+            var html = pages[0].repository.sort((r1, r2) => {
+                return parseInt(r1.createdTime) < parseInt(r2.createdTime);
+            });
+
+            this.ctx.body = html;
         }
     }
     return PageController;

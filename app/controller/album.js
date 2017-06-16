@@ -76,6 +76,9 @@ module.exports = app => {
         else if (this.ctx.params.id == 2) {
             this.ctx.body = res2;
         }
+        else if (this.ctx.params.id == 3) {
+            this.ctx.body = yield this.ctx.model.Urlmaps.find({});
+        }
         else {
             resErr.components[0].data.message = `id: ${this.ctx.params.id}`
             resErr.components[0].data.detail = JSON.stringify(this.ctx.request);

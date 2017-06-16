@@ -1,30 +1,46 @@
 
-var urlPage_Table = {
-    url: "url匹配规则",
-    pageId: "页面Id",
-    onlineDate: "上线时间",
-    offlineDate: "下线时间" 
+var urlmap_Table = {
+    url: "/album/1",
+    pageId: "1",
+    onlineDate: "1497585454178",
+    offlineDate: "1497585454178" 
 },
 
 var page_Model = {
-    id:'id',
-    head: {
-        title: "title",
-        meta: [],
-    },
-    body: {
-        node:['nodeId','nodeId']
-    }
+    id:'1',
+    repository: 
+    [
+        {
+            version: '1',
+            message: '变更提交注释',
+            createdTime: '1497585454178',
+            head: {
+                title: "title",
+                meta: [],
+            },
+            body: {
+                node:[
+                    {
+                        sort: 1,
+                        templateId: 'nid123',
+                        data: {
+                            /*模板数据*/
+                        }
+                    },
+                    {
+                        sort: 2,
+                        templateId: 'nid321',
+                        data: {
+                            /*模板数据*/
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+    
 }
 
-var pageNode_Table = [
-    {
-        nodeId: 'nodeId',
-        templateId: 'templateId',
-        onlineDate: "上线时间",
-        offlineDate: "下线时间",
-        data: {
-            /*模板数据*/
-        }
-    }
-]
+var template_model = {
+    id: 'nid123',
+}

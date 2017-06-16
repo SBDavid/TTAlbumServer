@@ -16,5 +16,10 @@ module.exports = appInfo => {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
   }
 
+  config.mongoose = {
+    url: 'mongodb://ec2-52-15-52-128.us-east-2.compute.amazonaws.com/TTAlbum',
+    options: {}
+  };
+
   return config;
 };

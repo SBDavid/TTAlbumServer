@@ -1,5 +1,6 @@
 
 var urlmap_Table = {
+    url:'/album/1',
     pageId: "1",
     onlineDate: "1497585454178",
     offlineDate: "1497585454178" 

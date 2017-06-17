@@ -24,16 +24,17 @@ var page_Model = {
                         sort: 1,
                         templateId: 'nid123',
                         data: {
-                            /*模板数据*/
+                            /*静态数据*/
+                        },
+                        apiData: {
+                            service:'album',
+                            function: 'getAlbum',
+                            params: {
+                                userName: 'username',
+                                albumName: 'albumname',
+                            }
                         }
                     },
-                    {
-                        sort: 2,
-                        templateId: 'nid321',
-                        data: {
-                            /*模板数据*/
-                        }
-                    }
                 ]
             }
         }

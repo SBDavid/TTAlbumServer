@@ -1,4 +1,5 @@
-'use strict';
+
+
 
 module.exports = app => {
   app.get('/page/:pageId', 'page.get');

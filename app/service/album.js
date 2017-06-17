@@ -1,32 +1,33 @@
+
 module.exports = app => {
-    class album extends app.Service {
-        * getAlbum(userName, albumName) {
+  class album extends app.Service {
+    * getAlbum({username, albumname}) {
             // 更具pageId查找page
-            var Albums = yield this.ctx.model.Albums.find({username: userName});
+      const Albums = yield this.ctx.model.Albums.find({ username: username });
 
-            if (Albums.length === 0) {
-                return {
-                    success: false,
-                    message: 'Username not found'
-                }
-            }
+      if (Albums.length === 0) {
+        return {
+          success: false,
+          message: 'Username not found',
+        };
+      }
 
-            var album = Albums[0].albums.filter(album => {
-                return album.name.toLowerCase() === albumName;
-            })
+      const album = Albums[0].albums.filter(album => {
+        return album.name.toLowerCase() === albumname;
+      });
 
-            if (album.length === 0) {
-                return {
-                    success: false,
-                    message: 'AlbumName not found'
-                }
-            }
+      if (album.length === 0) {
+        return {
+          success: false,
+          message: 'AlbumName not found',
+        };
+      }
 
-            return {
-                success: true,
-                data: album[0]
-            }
-        }
+      return {
+        success: true,
+        data: album[0],
+      };
     }
-    return album;
+    }
+  return album;
 };

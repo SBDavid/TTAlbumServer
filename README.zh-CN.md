@@ -24,7 +24,7 @@ $ open http://localhost:7001/news
 
 ```bash
 $ EGG_SERVER_ENV=prod npm start
-$ EGG_SERVER_ENV=prod nohup node dispatch.js > stdout.log 2> stderr.log &
+$ sudo EGG_SERVER_ENV=prod nohup node dispatch.js > stdout.log 2> stderr.log &
 ```
 
 ### 单元测试

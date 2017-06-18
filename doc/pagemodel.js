@@ -15,7 +15,17 @@ var page_Model = {
             message: '变更提交注释',
             createdTime: 1497585454178,
             head: {
-                title: "title",
+                title: {
+                    titleText:'静态标题',
+                    apiTitle: {
+                        // 动态数据部分
+                        service:'album',
+                        function: 'getTitlep',
+                        params: {
+                            userName: 'username',
+                        }
+                    }
+                },
                 meta: [],
             },
             body: {

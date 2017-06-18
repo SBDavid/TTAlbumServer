@@ -16,14 +16,23 @@ module.exports = app => {
                 return;
             }
 
-            // 连接动态数据
+            // 连接页面title动态数据
+            if(res.repository.head.title.apiTitle) {
+                const resTitle = yield this.ctx.service[res.repository.head.title.apiTitle.service][res.repository.head.title.apiTitle.function](params);
+                console.info(resTitle);
+                if (resTitle.success) {
+                    res.repository.head.title.titleText = resTitle.title;
+                }
+            }
+
+            // 连接node动态数据
             for (let i=0; i< res.repository.body.node.length; i++) {
                 if (!res.repository.body.node[i].apiData) {
                     continue;
                 }
                 var apiRes = yield this.ctx.service[res.repository.body.node[i].apiData.service][res.repository.body.node[i].apiData.function](params);
                 if (apiRes.success) {
-                    res.repository.body.node[i].apiData = apiRes.data;
+                    res.repository.body.node[i].apiData.dataSet = apiRes.data;
                 }
             }
 

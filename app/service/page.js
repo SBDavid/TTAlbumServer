@@ -2,9 +2,9 @@
 module.exports = app => {
   class page extends app.Service {
     * get(url) {
-            // 更具pageId查找page
+      // 更具pageId查找page
       let urlmaps = yield this.ctx.model.Urlmaps.find({ url });
-            // 筛选日期
+      // 筛选日期
       urlmaps = urlmaps.filter(urlMap => {
         const now = (new Date()).getTime();
         if (urlMap.onlineDate && urlMap.onlineDate > 0 && urlMap.onlineDate > now) {
@@ -16,7 +16,7 @@ module.exports = app => {
         return true;
       });
 
-            // 判断页面url时候有效
+      // 判断页面url是否有效
       if (urlmaps.length === 0) {
         return {
           success: false,
@@ -24,7 +24,7 @@ module.exports = app => {
         };
       }
       const pages = yield this.ctx.model.Pages.find({ id: urlmaps[0].pageId });
-            // 判断页面pages时候有效
+      // 判断页面pages是否有效
       if (pages.length === 0) {
         return {
           success: false,
@@ -36,7 +36,7 @@ module.exports = app => {
         return r1.createdTime < r2.createdTime;
       });
 
-            // 判断页面repository时候有效
+      // 判断页面repository是否有效
       if (repositories.length === 0) {
         return {
           success: false,
@@ -49,6 +49,6 @@ module.exports = app => {
         repository: repositories[0],
       };
     }
-    }
+  }
   return page;
 };

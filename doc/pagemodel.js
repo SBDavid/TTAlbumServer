@@ -2,8 +2,8 @@
 var urlmap_Table = {
     url:'/album/1',
     pageId: "1",
-    onlineDate: "1497585454178",
-    offlineDate: "1497585454178" 
+    onlineDate: 1497585454178,
+    offlineDate: 1497585454178 
 },
 
 var page_Model = {
@@ -13,7 +13,7 @@ var page_Model = {
         {
             version: '1',
             message: '变更提交注释',
-            createdTime: '1497585454178',
+            createdTime: 1497585454178,
             head: {
                 title: "title",
                 meta: [],
@@ -27,6 +27,7 @@ var page_Model = {
                             /*静态数据*/
                         },
                         apiData: {
+                            // 动态数据部分
                             service:'album',
                             function: 'getAlbum',
                             params: {

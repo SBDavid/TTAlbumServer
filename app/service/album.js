@@ -1,14 +1,14 @@
 
 module.exports = app => {
   class album extends app.Service {
-    * getAlbum({username, albumname}) {
-            // 更具pageId查找page
+    * getAlbum({ username, albumname }) {
+      // 更具pageId查找page
       const Albums = yield this.ctx.model.Albums.find({ username: username });
 
       if (Albums.length === 0) {
         return {
           success: false,
-          message: 'Username not found',
+          message: `Username not found, username: ${username}`,
         };
       }
 
@@ -19,7 +19,7 @@ module.exports = app => {
       if (album.length === 0) {
         return {
           success: false,
-          message: 'AlbumName not found',
+          message: `AlbumName not found, albumname: ${albumname}`,
         };
       }
 
@@ -28,6 +28,6 @@ module.exports = app => {
         data: album[0],
       };
     }
-    }
+  }
   return album;
 };

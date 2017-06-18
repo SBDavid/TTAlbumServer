@@ -19,11 +19,9 @@ module.exports = app => {
             // 连接动态数据
             for (let i=0; i< res.repository.body.node.length; i++) {
                 if (!res.repository.body.node[i].apiData) {
-                    console.info('continue');
                     continue;
                 }
                 var apiRes = yield this.ctx.service[res.repository.body.node[i].apiData.service][res.repository.body.node[i].apiData.function](params);
-                console.info(apiRes);
                 if (apiRes.success) {
                     res.repository.body.node[i].apiData = apiRes.data;
                 }

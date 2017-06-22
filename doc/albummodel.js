@@ -1,4 +1,4 @@
-W
+W;
 const User = {
   username: 'david',
   albums: [
